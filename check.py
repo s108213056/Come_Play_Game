@@ -1,5 +1,5 @@
 import tensorflow as tf
-interpreter = tf.lite.Interpreter(model_path='放入自己訓練模型的路徑')# example：(model_path='sps.tflite')
+interpreter = tf.lite.Interpreter(model_path='放入自己訓練出來的模型的路徑')# example：(model_path='sps.tflite')
 interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()

@@ -78,6 +78,12 @@
 - Customize Post-training quantization on the TensorFLow Lite model https://colab.research.google.com/github/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/tutorials/model_maker_image_classification.ipynb#scrollTo=Safo0e40wKZW
 - Custom Image Classification Model Using TensorFlow Lite Model Maker https://towardsdev.com/custom-image-classification-model-using-tensorflow-lite-model-maker-68ee4514cd45
 
+#### Telegram Bot
+
+- Create a Telegram Bot https://sendpulse.com/knowledge-base/chatbot/create-telegram-chatbot
+- Telegram Bot gets the group chat id https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id
+- Telegram Send Photo to Channel (using python-telegram-bot) https://code.luasoftware.com/tutorials/telegram/telegram-send-photo-to-channel/
+
 ### 特別感謝
 
 #### 李漢偉 助教大大

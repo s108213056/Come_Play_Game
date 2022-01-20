@@ -205,6 +205,16 @@ print(hand_name)# 印出最高值的 example：Scissors
 - Telegram Bot gets the group chat id https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id
 - Telegram Send Photo to Channel (using python-telegram-bot) https://code.luasoftware.com/tutorials/telegram/telegram-send-photo-to-channel/
 
+### 分工表
+
+| 余嘉舜  | 蔡清寶|        薛智宏         |沈佳龍|
+| ------ | ----- | ----------------------|--|
+|模組訓練|題目發想|題目發想                |器材布置|
+|程式編輯|程式編輯|GitHub 撰寫             |模組訓練|
+|上台報告|上台報告| PTT 製作  |程式編輯|
+
+
+
 ### 特別感謝
 
 #### 李漢偉 助教大大

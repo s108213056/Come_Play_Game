@@ -1,10 +1,10 @@
 import cv2
 import numpy as np
-import tflite_runtime.interpreter as tflite
+import tflite_runtime.interpreter as Interpreter
 #若是要以Windows作業系統開啓
 #import tensorflow as tf
 #interpreter = tf.lite.Interpreter(model_path='放入自己訓練模型的路徑')# example：(model_path='sps.tflite')
-interpreter = tflite.Interpreter(model_path='放入自己訓練模型的路徑')# example：(model_path='sps.tflite')
+interpreter = Interpreter(model_path='放入自己訓練模型的路徑')# example：(model_path='sps.tflite')
 interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()

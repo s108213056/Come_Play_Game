@@ -71,7 +71,11 @@
 ### 參考資料
 
 #### Tensorflow
-- https://www.tensorflow.org/lite/guide/python
+
+- Installtion TensorFlow Lite for Python and Run an inference using tflite_runtime https://www.tensorflow.org/lite/guide/python
+- TFLite models https://thinkmobile.dev/testing-tensorflow-lite-image-classification-model/
+- Customize Post-training quantization on the TensorFLow Lite model https://colab.research.google.com/github/tensorflow/tensorflow/blob/master/tensorflow/lite/g3doc/tutorials/model_maker_image_classification.ipynb#scrollTo=Safo0e40wKZW
+- Custom Image Classification Model Using TensorFlow Lite Model Maker https://towardsdev.com/custom-image-classification-model-using-tensorflow-lite-model-maker-68ee4514cd45
 
 ### 特別感謝
 

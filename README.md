@@ -29,16 +29,26 @@
 
 <hr/>
 
-### 模型訓練 
-- 此部分為window 上訓練模型需要安裝的套件（已有上傳訓練好的模型下載，這部分可省略）
+### 模型的應用（train.py -> check.py -> predict.py） 
+
+- 此部分為 Windows 作業系統上訓練模型需要安裝的套件（train.py -> check.py）
+    * `pip install tensorflow`
     * `pip install tflite_model_maker`
-    * `pip install os`
     * `pip install numpy`
+    * `pip3 install argparse`
+    * `pip install opencv-python`
+  
+- 此部分為 Raspberry Pi OS 作業系統上執行 predict.py 所需要安裝的套件（predict.py）
+    * `apt-get install python3-tflite-runtime`
+    * `pip install tflite_model_maker`
+    * `pip install numpy`
+    * `pip3 install argparse`
     * `pip install opencv-python`
 
 <hr/>
 
 ### 安裝流程
+
 登錄樹莓派後要先更新軟體 
 - `sudo apt upgrade`
 
@@ -46,16 +56,17 @@
 - `sudo apt install python3`
 
 安裝 TensorFlow Lite
-- `pip3 install tflite-runtime`
+- `apt-get install python3-tflite-runtime`
+- `pip install tflite_model_maker`
 
 安裝 numpy (矩陣，訓練預測模型)
-- `pip3 install numpy`
+- `pip install numpy`
 
 安裝 argparse (numpy套件)
-- `pip3 install argparse`
+- `pip install argparse`
 
 安裝 OpenCV
-* `pip3 install opencv-python`
+* `pip install opencv-python`
 
 <hr/>
 

@@ -43,6 +43,10 @@
     * `pip3 install argparse`
     * `pip install opencv-python`
 
+![image](https://user-images.githubusercontent.com/56122682/150295443-61f9201d-c8f9-4022-aafc-cfc5ba2d7ed0.jpg)
+
+![image](https://user-images.githubusercontent.com/56122682/150295688-cedd142a-eabd-4c8e-8582-35e808e7894c.png)
+  
 - train.py
 
 ```python=
@@ -121,10 +125,6 @@ highest_pred_loc = np.argmax(pred)# 最大值就是預測結果[0~255]
 hand_name = class_ind[highest_pred_loc]
 print(hand_name)# 印出最高值的 example：Scissors
 ```
-
-![image](https://user-images.githubusercontent.com/56122682/150295443-61f9201d-c8f9-4022-aafc-cfc5ba2d7ed0.jpg)
-
-![image](https://user-images.githubusercontent.com/56122682/150295688-cedd142a-eabd-4c8e-8582-35e808e7894c.png)
   
 - 此部分為 Raspberry Pi OS 作業系統上執行 predict.py 所需要安裝的套件（predict.py）
     * `apt-get install python3-tflite-runtime`

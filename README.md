@@ -37,6 +37,10 @@
     * `pip install numpy`
     * `pip3 install argparse`
     * `pip install opencv-python`
+
+![image](https://user-images.githubusercontent.com/56122682/150295443-61f9201d-c8f9-4022-aafc-cfc5ba2d7ed0.jpg)
+
+![image](https://user-images.githubusercontent.com/56122682/150295688-cedd142a-eabd-4c8e-8582-35e808e7894c.png)
   
 - 此部分為 Raspberry Pi OS 作業系統上執行 predict.py 所需要安裝的套件（predict.py）
     * `apt-get install python3-tflite-runtime`
@@ -44,6 +48,8 @@
     * `pip install numpy`
     * `pip3 install argparse`
     * `pip install opencv-python`
+
+![image](https://user-images.githubusercontent.com/56122682/150295469-1430e62a-8dae-44f1-a26f-fdc5c031a656.jpg)
 
 <hr/>
 
@@ -76,7 +82,6 @@
 (有助於更好的辨認到底是誰一直想闖進別人宿舍)
 
 ![LSApic](https://user-images.githubusercontent.com/94297365/150220417-fd63c4bd-9e52-457b-9765-8045b2cd6712.png)
-
 
 <hr/>
 

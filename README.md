@@ -68,6 +68,10 @@
 
 
 <hr/>
+### 參考資料
+
+#### Tensorflow
+- https://www.tensorflow.org/lite/guide/python
 
 ### 特別感謝
 

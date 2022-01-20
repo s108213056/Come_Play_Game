@@ -138,6 +138,27 @@ print(hand_name)# 印出最高值的 example：Scissors
 
 <hr/>
 
+## 設備安裝 (需特別注意)
+
+![image](https://user-images.githubusercontent.com/94297365/150322025-2f3ae1a9-cb23-4438-ac3e-f069548aa16e.png)
+
+**地線接 Ground**
+<br/>
+**火線接 GPIO24**
+
+![image](https://user-images.githubusercontent.com/94297365/150322290-568ad3af-7e30-4e94-97bf-76da8e700665.png)
+
+**樹莓派的地線通過接電夾接到磁力鎖的地線上**
+<br/>
+**樹莓派的火線通過接電夾接到磁力鎖的火線上**
+<br/>
+**切勿接錯線路，否則樹莓派會燒掉**
+<br/>
+![image](https://user-images.githubusercontent.com/94297365/150323585-50fd44b6-ea67-417b-aae1-32832731083d.png)
+
+
+<hr/>
+
 ### 安裝流程
 
 登錄樹莓派後要先更新軟體 

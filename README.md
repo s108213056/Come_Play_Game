@@ -42,6 +42,85 @@
 
 ![image](https://user-images.githubusercontent.com/56122682/150295688-cedd142a-eabd-4c8e-8582-35e808e7894c.png)
   
+- train.py
+
+```python=
+#此訓練模型不是在Raspberry Pi上面，而是在Windows作業系統上
+import os
+import numpy as np
+import tensorflow as tf
+assert tf.__version__.startswith('2')
+from tflite_model_maker import model_spec
+from tflite_model_maker import image_classifier
+from tflite_model_maker.config import ExportFormat
+from tflite_model_maker.config import QuantizationConfig
+from tflite_model_maker.image_classifier import DataLoader
+
+image_path = '放入已經分類號類別的圖鑒總檔案的路徑'# example：image_path = 'C:/Users/User/Desktop/Model/sps'
+data = DataLoader.from_folder(image_path)
+train_data, rest_data = data.split(0.8)# 作爲訓練集
+validation_data, test_data = rest_data.split(0.5)# 再把剩餘的分割為驗證集與測試集
+model = image_classifier.create(train_data, validation_data=validation_data, epochs = 15)# epochs 訓練組的次數（自訂）
+loss, accuracy = model.evaluate(test_data)# 偏差，準度
+model.export(export_dir='.',tflite_filename='輸出檔案的名稱.tflite') # example：tflite_filename='sps.tflite'
+  
+```
+  
+- check.py 
+
+```python=
+import tensorflow as tf
+interpreter = tf.lite.Interpreter(model_path='放入自己訓練出來的模型的路徑')# example：(model_path='sps.tflite')
+interpreter.allocate_tensors()
+input_details = interpreter.get_input_details()
+output_details = interpreter.get_output_details()
+
+print("== Input details ==")
+print("name:", input_details[0]['name'])# 物件名字
+print("shape:", input_details[0]['shape'])# [  1 224 224   3] 一個輸出結果；圖片長度壓縮像素；圖片寬度壓縮像素；X個種類的分類
+print("type:", input_details[0]['dtype'])# <class 'numpy.uint8'> 8-bit unsigned integer (0 to 255)
+
+print("\n== Output details ==")
+print("name:", output_details[0]['name'])# 物件名字
+print("shape:", output_details[0]['shape'])# [1 3] 一個輸出結果；X個種類的分類
+print("type:", output_details[0]['dtype'])# <class 'numpy.uint8'> 8-bit unsigned integer (0 to 255)
+```
+
+- predict.py
+
+```python=
+import cv2
+import numpy as np
+import tflite_runtime.interpreter as Interpreter
+#若是要以Windows作業系統開啓
+#import tensorflow as tf
+#interpreter = tf.lite.Interpreter(model_path='放入自己訓練模型的路徑')# example：(model_path='sps.tflite')
+interpreter = Interpreter(model_path='放入自己訓練模型的路徑')# example：(model_path='sps.tflite')
+interpreter.allocate_tensors()
+input_details = interpreter.get_input_details()
+output_details = interpreter.get_output_details()
+
+image_path='放入自己要測試的圖片路徑'# example：image_path='s.jpg'
+img = cv2.imread(image_path)
+img = cv2.resize(img,(224,224))# check.py 顯示的大小（長寬）
+
+input_shape = input_details[0]['shape']
+input_tensor= np.array(np.expand_dims(img,0))
+input_index = interpreter.get_input_details()[0]["index"]
+interpreter.set_tensor(input_index, input_tensor)
+interpreter.invoke()
+
+output_details = interpreter.get_output_details()
+output_data = interpreter.get_tensor(output_details[0]['index'])
+pred = np.squeeze(output_data)
+print(pred)# 這裏印出訓練模型的比例（255分配）[ 33 216   7]
+
+class_ind = {0:"Paper",1:"Scissors",2:"Stone"}# 列出訓練有幾種種類
+highest_pred_loc = np.argmax(pred)# 最大值就是預測結果[0~255]
+hand_name = class_ind[highest_pred_loc]
+print(hand_name)# 印出最高值的 example：Scissors
+```
+
 - 此部分為 Raspberry Pi OS 作業系統上執行 predict.py 所需要安裝的套件（predict.py）
     * `apt-get install python3-tflite-runtime`
     * `pip install tflite_model_maker`

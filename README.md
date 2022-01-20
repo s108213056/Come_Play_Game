@@ -16,6 +16,7 @@
 ### 使用設備
 - 軟體
     * Raspberry Pi OS (樹莓派圖形化界面)
+    * TensorFlow (在windows上訓練模型)
     * TensorFlow Lite (訓練模型軟體)
     * OpenCV (影像辨別)
     * Telegram Bot (回傳圖像&資料 的 機器人)
